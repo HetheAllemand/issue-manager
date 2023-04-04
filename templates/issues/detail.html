@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+
+{% block title %}{{ issue.summary }}{% endblock title %}
+
+
+{% block content %}
+<h1>{{ issue.summary }}</h1>
+<small>
+    <p>Reporter: {{ issue.author }}</p>
+    <p>Assignee: {{ issue.assignee }}</p>
+</small>
+<p>{{ issue.description }}</p>
+<p>Priority: {{ issue.priority }}</p>
+<p>Status: {{issue.status }}</p>
+{% endblock content %}

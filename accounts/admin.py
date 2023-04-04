@@ -1,13 +1,13 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .models import Role, Team
-from .forms import CustomUserCreationForm, CustomChangeForm
+from .models import Role, Team, CustomUser
+from .forms import CustomUserCreationForm, CustomUserChangeForm
 
 
 class CustomUserAdmin(UserAdmin):
     model = CustomUser
     add_form = CustomUserCreationForm
-    form = CustomChangeForm
+    form = CustomUserChangeForm
     add_fieldsets = UserAdmin.add_fieldsets + (
         (None, {"fields": ("role", "team")}),
     )

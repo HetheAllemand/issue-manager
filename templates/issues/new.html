@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block title %}New Issue{% endblock title %}
+
+
+{% block content %}
+<h1>New Issue</h1>
+<form method="POST">
+    {% csrg_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Create" class="Btn btn-success">
+</form>
+{% endblock content %}
